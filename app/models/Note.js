@@ -4,6 +4,7 @@ export class Note {
     this.createdAt = new Date()
     this.updatedAt = new Date()
     this.body = data.body
+    this.color = data.color
   }
   get noteTemplate() {
     return ``

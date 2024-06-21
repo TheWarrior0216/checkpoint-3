@@ -1,1 +1,11 @@
 /* BASIC STYLES HERE */
+.textArea-sizing {
+  width: 60dvh;
+  height: 30dvh;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.centerBox {
+  margin-top: 10dvh;
+}

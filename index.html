@@ -22,7 +22,7 @@
       <a class="navbar-brand" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ml-2">Checkpoint-3</span>
+        <span class="ml-2">Register</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,12 +36,66 @@
 
   <!-- SECTION -->
   <main data-bs-theme="dark">
-
     <section id="router-view">
       <!-- primary viewport -->
     </section>
 
 
+
+    <!-- testing off Canvas -->
+    <section class="d-flex justify-content-end mt-5 me-5 ">
+      <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight">Select your Note or Create a new one!</button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Select your Note or Create a new one!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          ...
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Main Body -->
+    <section id="noteCard">
+      <div class="align-content-center">
+        <div class="container centerBox border border-info">
+          <div class="row bg-dark shadow">
+            <div class="col-12">
+              <div>
+                <div class="row">
+                  <div class="col-4 p-5">
+                    <h1 class="mb-4"> Title</h>
+                      <h4> Created at _____</h4>
+                      <h4 class="my-4"> Opened at _____</h4>
+                  </div>
+                  <div class="col-7 textArea">
+                    <form>
+                      <textarea name="body" placeholder="Enter text here!" id="textArea"
+                        class="textArea-sizing"></textarea>
+                      <div class="text-end">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-1 align-content-end d-flex-column">
+                    <div>
+                      <button class=" btn btn-rounded btn-success mt-5 me-5 mb-1"> Save </button>
+                    </div>
+                    <div>
+                      <button class="btn btn-rounded btn-danger  me-5 mb-5"> Delete </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- SECTION -->
