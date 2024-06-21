@@ -17,6 +17,9 @@ class ObservableAppState extends EventEmitter {
       body: 'lorem ipsum something something something',
     }),
   ]
+  /**@type {Note} */
+  activeNote = null
 }
+
 
 export const AppState = createObservableProxy(new ObservableAppState())
