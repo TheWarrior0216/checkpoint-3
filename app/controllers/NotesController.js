@@ -1,11 +1,13 @@
 import { AppState } from "../AppState.js"
 import { notesService } from "../services/NotesService.js"
+import { getFormData } from "../utils/FormHandler.js"
 import { setHTML } from "../utils/Writer.js"
 
 export class NotesController {
   constructor() {
     console.log('Running NotesController')
     this.drawJournalInfo()
+    AppState.on('Notes', this.drawJournalInfo)
   }
   drawActiveNoteTemplate(noteID) {
     notesService.drawActiveNoteTemplate(noteID)
@@ -18,5 +20,25 @@ export class NotesController {
     notes.forEach((note) => journalInfoHTML += note.journalInfo)
     setHTML('canvasBody', journalInfoHTML)
     setHTML('journalEntries', `You have ${notes.length} Notes`)
+  }
+  createNote() {
+    event.preventDefault()
+    const form = event.target
+    const noteData = getFormData(form)
+    notesService.createNote(noteData)
+  }
+  desimateNote(ID) {
+    if (!window.confirm('Are You Ready To Decimate Your Note?')) {
+      return
+    }
+    const notes = AppState.Notes
+    notesService.desimateNote(ID)
+    setHTML('noteCard', AppState.activeNote.replacementScreen)
+  }
+  saveNote() {
+    event.preventDefault()
+    const form = event.target
+    const noteData = getFormData(form)
+    notesService.saveNote(noteData)
   }
 }

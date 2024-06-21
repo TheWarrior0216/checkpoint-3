@@ -42,7 +42,7 @@
 
 
 
-    <!-- testing off Canvas -->
+    <!--onCanvas -->
     <section class="d-flex justify-content-end mt-5 me-5 ">
       <button class="btn btn-dark p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
         aria-controls="offcanvasRight">Select your Note or Create a new one!</button>
@@ -53,7 +53,25 @@
               id="journalEntries"></span> </h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div id="canvasBody" class="offcanvas-body ">
+        <div>
+          <div id="canvasBody" class="offcanvas-body ">
+          </div>
+          <form onsubmit="app.NotesController.createNote()" class="d-flex ">
+            <div class="row justify-content-around shadow">
+              <div class="col-md-4">
+                <label for="title" class="form-label">Title</label>
+                <input name="title" type="string" class="form-control" id="title" minlength="3" maxlength="15">
+              </div>
+              <div class="col-md-4 ">
+                <label for="color" class="form-label">Color</label>
+                <input style="height: 40px;" name="color" type="color" class="form-control " id="color">
+              </div>
+              <div class="col-6 text-center">
+
+                <button class="btn btn-rounded btn-outline-info my-3 " type="submit"> Submit </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -63,7 +81,7 @@
     <!-- Main Body -->
     <section id="noteCard">
       <!-- <div class="align-content-center">
-        <div class="container centerBox border border-info">
+        <div class="container centerBox " style="border: 3px, solid blue;">
           <div class="row bg-dark shadow">
             <div class="col-12">
               <div>
