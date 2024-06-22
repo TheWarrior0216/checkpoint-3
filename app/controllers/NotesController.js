@@ -35,10 +35,13 @@ export class NotesController {
     notesService.desimateNote(ID)
     setHTML('noteCard', AppState.activeNote.replacementScreen)
   }
-  saveNote() {
+  saveNote(ID) {
     event.preventDefault()
     const form = event.target
+    debugger
     const noteData = getFormData(form)
-    notesService.saveNote(noteData)
+    notesService.saveNote(`${noteData.body}`, ID)
+    console.log(AppState.activeNote.body)
+    setHTML('textArea', AppState.activeNote.body)
   }
 }

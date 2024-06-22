@@ -24,9 +24,9 @@ export class Note {
                       <h4 class="my-4"> ${this.updatedAt}</h4>
                   </div>
                   <div class="col-7 textArea">
-                    <form onsubmit ="app.NotesController.saveNote()" id="textAreaForm">
+                    <form onsubmit ="app.NotesController.saveNote('${this.id}')" id="textAreaForm">
                       <textarea name="body" placeholder="Enter text here!" id="textArea"
-                        class="textArea-sizing"></textarea>
+                        class="textArea-sizing">${this.body}</textarea>
                       <div class="text-end">
                       </div>
                     </form>

@@ -2,8 +2,13 @@ import { AppState } from "../AppState.js"
 import { Note } from "../models/Note.js"
 
 class NotesService {
-  saveNote(noteData) {
+  saveNote(noteData, ID) {
     const note = AppState.Notes
+    let foundNote = note.find((note) => note.id == ID)
+    let newNote = noteData
+    debugger
+    foundNote.body = newNote
+    console.log(noteData)
   }
   desimateNote(ID) {
     const notes = AppState.Notes
