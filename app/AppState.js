@@ -8,15 +8,11 @@ class ObservableAppState extends EventEmitter {
   /**@type {import('./models/Note.js').Note[]} */
   Notes = [
     new Note({
-      title: 'Javascript',
-      body: 'lorem ipsum',
-      color: 'blue'
-    }),
-    new Note({
-      title: 'Oh No OH no',
-      body: 'lorem ipsum something something something',
-      color: '#000000'
-    }),
+      title: 'Welcome to Register',
+      body: `This is where you can begin a new Register. Just click 'Select your Note to begin!!'`,
+      color: 'blue',
+      createdAt: new Date()
+    })
   ]
   /**@type {Note} */
   activeNote = null

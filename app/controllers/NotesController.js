@@ -45,3 +45,4 @@ export class NotesController {
     setHTML('textArea', AppState.activeNote.body)
   }
 }
+

@@ -4,9 +4,9 @@ export class Note {
   constructor(data) {
     this.title = data.title
     this.id = generateId()
-    this.createdAt = new Date()
+    this.createdAt = new Date() ? data.createdAt : new Date()
     this.updatedAt = new Date()
-    this.body = data.body
+    this.body = data.body ? data.body : ""
     this.color = data.color
 
   }
