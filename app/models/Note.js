@@ -4,8 +4,9 @@ export class Note {
   constructor(data) {
     this.title = data.title
     this.id = generateId()
-    this.createdAt = new Date() ? data.createdAt : new Date()
-    this.updatedAt = new Date()
+    this.createdAt = this.createdDate ? data.createdAt : this.createdDate
+
+    this.updatedAt = this.updatedDate
     this.body = data.body ? data.body : ""
     this.color = data.color
 
@@ -20,8 +21,8 @@ export class Note {
                 <div class="row">
                   <div class="col-4 p-5">
                     <h1 class="mb-4"> ${this.title}</h>
-                      <h4> ${this.createdAt}</h4>
-                      <h4 class="my-4"> ${this.updatedAt}</h4>
+                      <h4> Created at: ${this.createdAt}</h4>
+                      <h4 class="my-4"> Last opened at: ${this.updatedAt}</h4>
                   </div>
                   <div class="col-7 textArea">
                     <form onsubmit ="app.NotesController.saveNote('${this.id}')" id="textAreaForm">
@@ -55,5 +56,11 @@ export class Note {
   }
   get replacementScreen() {
     return ``
+  }
+  get createdDate() {
+    return new Date().toLocaleString('en-us', { hour: "numeric", minute: "numeric", second: "numeric" })
+  }
+  get updatedDate() {
+    return new Date().toLocaleString('en-us', { hour: "numeric", minute: "numeric", second: "numeric" })
   }
 }
