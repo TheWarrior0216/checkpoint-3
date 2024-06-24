@@ -8,6 +8,8 @@ export class NotesController {
     console.log('Running NotesController')
     this.drawJournalInfo()
     AppState.on('Notes', this.drawJournalInfo)
+    // AppState.on('activeNote', this.drawActiveNoteTemplate)
+    notesService.loadNotes()
   }
   drawActiveNoteTemplate(noteID) {
     notesService.drawActiveNoteTemplate(noteID)
