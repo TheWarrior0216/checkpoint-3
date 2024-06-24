@@ -5,7 +5,7 @@ import { createObservableProxy } from './utils/ObservableProxy.js'
 class ObservableAppState extends EventEmitter {
 
 
-  /**@type {import('./models/Note.js').Note[]} */
+  /**@type {Note[]} */
   Notes = [
     new Note({
       title: 'Welcome to Register',

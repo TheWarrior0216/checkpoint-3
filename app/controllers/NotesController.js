@@ -5,11 +5,12 @@ import { setHTML } from "../utils/Writer.js"
 
 export class NotesController {
   constructor() {
-    console.log('Running NotesController')
-    this.drawJournalInfo()
     AppState.on('Notes', this.drawJournalInfo)
-    // AppState.on('activeNote', this.drawActiveNoteTemplate)
+    console.log('Running NotesController')
+    debugger
     notesService.loadNotes()
+    this.drawJournalInfo()
+    // AppState.on('Notes', this.drawActiveNoteTemplate)
   }
   drawActiveNoteTemplate(noteID) {
     notesService.drawActiveNoteTemplate(noteID)

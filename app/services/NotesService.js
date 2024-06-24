@@ -26,16 +26,16 @@ class NotesService {
   }
   drawActiveNoteTemplate(noteID) {
     let notes = AppState.Notes
-    let getActiveNote = notes.find((note) => note.id == noteID)
     this.loadNotes()
+    let getActiveNote = notes.find((note) => note.id == noteID)
     AppState.activeNote = getActiveNote
   }
   saveNotes() {
-    saveState('Journal', AppState.activeNote)
+    saveState(`journal`, AppState.Notes)
   }
   loadNotes() {
     console.log('wolah')
-    loadState('Journal', [Note])
+    AppState.Notes = loadState(`journal`, [Note])
   }
 }
 export const notesService = new NotesService()
