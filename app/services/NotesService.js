@@ -4,8 +4,9 @@ import { loadState, saveState } from "../utils/Store.js"
 
 class NotesService {
   saveNote(noteData, ID) {
-    const note = AppState.Notes
-    let foundNote = note.find((note) => note.id == ID)
+    const notes = AppState.Notes
+    console.log(notes)
+    let foundNote = notes.find((note) => note.id == ID)
     let newNote = noteData
     debugger
     foundNote.body = newNote
@@ -26,7 +27,7 @@ class NotesService {
   }
   drawActiveNoteTemplate(noteID) {
     let notes = AppState.Notes
-    this.loadNotes()
+    // this.loadNotes()
     let getActiveNote = notes.find((note) => note.id == noteID)
     AppState.activeNote = getActiveNote
   }
