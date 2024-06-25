@@ -6,7 +6,7 @@ export class Note {
     this.id = generateId()
     this.createdAt = this.createdDate ? data.createdAt : this.createdDate
 
-    this.updatedAt = this.updatedDate
+    this.updatedAt = this.updatedDate ? data.updatedAt : this.updatedDate
     this.body = data.body ? data.body : ""
     this.color = data.color
 
@@ -22,7 +22,7 @@ export class Note {
                   <div class="col-4 p-5">
                     <h1 class="mb-4"> ${this.title}</h>
                       <h4> Created at: ${this.createdAt}</h4>
-                      <h4 class="my-4"> Last opened at: ${this.updatedAt}</h4>
+                      <h4 class="my-4"> Last Saved at: ${this.updatedAt}</h4>
                   </div>
                   <div class="col-7 textArea">
                     <form onsubmit ="app.NotesController.saveNote('${this.id}')" id="textAreaForm">

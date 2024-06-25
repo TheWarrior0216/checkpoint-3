@@ -39,7 +39,6 @@ export class NotesController {
     setHTML('noteCard', AppState.activeNote.replacementScreen)
   }
   saveNote(ID) {
-    // notesService.loadNotes()
     event.preventDefault()
     const form = event.target
     debugger
@@ -47,6 +46,7 @@ export class NotesController {
     notesService.saveNote(`${noteData.body}`, ID)
     console.log(AppState.activeNote.body)
     setHTML('textArea', AppState.activeNote.body)
+    this.drawActiveNoteTemplate(ID)
   }
 }
 

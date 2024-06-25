@@ -10,6 +10,7 @@ class NotesService {
     let newNote = noteData
     debugger
     foundNote.body = newNote
+    foundNote.updatedAt = foundNote.updatedDate
     console.log(noteData)
     this.saveNotes()
   }
@@ -22,6 +23,7 @@ class NotesService {
   createNote(noteData) {
     const note = AppState.Notes
     const newnote = new Note(noteData)
+    newnote.createdAt = newnote.createdDate
     note.push(newnote)
     this.saveNotes()
   }
